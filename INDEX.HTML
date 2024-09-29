@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimas Golosinas</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #f8e7fc;
+            color: #3e004f;
+            text-align: center;
+        }
+
+        header {
+            background-color: #7c2ae8;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 3px 3px #ffbe33;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Buscador */
+        .buscador input {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #7c2ae8;
+            margin-right: 10px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #ffbe33;
+            color: #3e004f;
+            padding: 50px 20px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px #7c2ae8;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero button {
+            background-color: #7c2ae8;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero button:hover {
+            background-color: #ffbe33;
+            color: #7c2ae8;
+        }
+
+        /* Productos */
+        .productos {
+            background-color: #f8e7fc;
+            padding: 50px 20px;
+        }
+
+        .productos h2 {
+            font-size: 2rem;
+            color: #7c2ae8;
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .producto {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .producto img {
+            max-width: 100%;
+            border-radius: 15px;
+        }
+
+        .producto h3 {
+            font-size: 1.5rem;
+            color: #7c2ae8;
+            margin: 15px 0;
+        }
+
+        .producto p {
+            font-size: 1rem;
+            color: #3e004f;
+        }
+
+        .producto button {
+            background-color: #7c2ae8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .producto button:hover {
+            background-color: #ffbe33;
+            color: #7c2ae8;
+        }
+
+        /* Carrito */
+        .carrito {
+            margin: 0 20px;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #7c2ae8;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Checkout */
+        .checkout {
+            background-color: #ffbe33;
+            color: #3e004f;
+            padding: 50px 20px;
+        }
+
+        .checkout h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .checkout form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .checkout input {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%;
+            border: 1px solid #7c2ae8;
+            border-radius: 5px;
+        }
+
+        .checkout button {
+            background-color: #7c2ae8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .checkout button:hover {
+            background-color: #ffbe33;
+            color: #7c2ae8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dimas Golosinas</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li class="buscador">
+                    <input type="text" placeholder="Buscar...">
+                </li>
+                <li class="carrito">
+                    <h2><span id="icono-carrito">🛒</span> <span id="cantidad-carrito">0</span></h2>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Bienvenidos al Mundo Dulce de Dimas Golosinas</h2>
+        <p>¡Explora una fábrica de sabores y colores como ninguna otra!</p>
+        <button>Descubre Más</button>
+    </section>
+
+    <section class="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="grid">
+            <div class="producto">
+                <img src="golosina1.jpg" alt="Golosina 1">
+                <h3>Chocolates mágicos</h3>
+                <p>Deleita tus sentidos con nuestros exclusivos chocolates.</p>
+                <button onclick="agregarAlCarrito('Chocolates mágicos')">Comprar Ahora</button>
+            </div>
+            <div class="producto">
+                <img src="golosina2.jpg" alt="Golosina 2">
+                <h3>Caramelos Arcoíris</h3>
+                <p>Una explosión de colores y sabores en cada bocado.</p>
+                <button onclick="agregarAlCarrito('Caramelos Arcoíris')">Comprar Ahora</button>
+            </div>
+            <!-- Agrega más productos aquí -->
+        </div>
+    </section>
+
+    <section class="checkout" id="checkout" style="display: none;">
+        <h2>Checkout</h2>
+        <form id="form-checkout">
+            <input type="text" placeholder="Nombre" required>
+            <input type="text" placeholder="Dirección" required>
+            <input type="email" placeholder="Correo Electrónico" required>
+            <button type="submit">Finalizar Compra</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Dimas Golosinas. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let cantidadCarrito = 0;
+
+        function agregarAlCarrito(producto) {
+            cantidadCarrito++;
+            document.getElementById('cantidad-carrito').innerText = cantidadCarrito;
+            alert(`${producto} ha sido agregado al carrito.`);
+        }
+
+        function mostrarCheckout() {
+            document.getElementById('checkout').style.display = 'block';
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+
+        document.getElementById('form-checkout').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Compra finalizada. ¡Gracias por tu compra!');
+            cantidadCarrito = 0;
+            document.getElementById('cantidad-carrito').innerText = cantidadCarrito;
+            document.getElementById('checkout').style.display = 'none';
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+
